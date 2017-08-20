@@ -17,10 +17,11 @@ from _operator import attrgetter
 
 standings = []
 
+game_dir = input("Enter your main NR2003 directory: ")
 
 for i in range(0, int(input("How many races would you like to add?"))):
 
-    standings = standings_single_race(standings, 'nr2003customseason', input("Enter name of NR2003 export file"))
+    standings = standings_single_race(standings, 'nr2003customseason', input("Enter name of NR2003 export file"), game_dir)
 
 
 

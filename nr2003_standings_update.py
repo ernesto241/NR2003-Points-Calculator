@@ -31,9 +31,9 @@ class Driver():
 
 
 
-def standings_single_race(standings, save_file, race_file):
+def standings_single_race(standings, save_file, race_file, game_dir):
     #
-    f = open("C:/Users/Ernesto/Games/NR 2003/exports_imports/" + race_file + ".html", mode = 'r')
+    f = open(game_dir +  "/exports_imports/" + race_file + ".html", mode = 'r')
     fcontent = f.readlines()
     
     def get_finish_order(fcontent, n):
@@ -115,7 +115,7 @@ def standings_single_race(standings, save_file, race_file):
         if not d_exists:
             standings.append(d)
         
-    w = open("C:/Users/Ernesto/Games/NR 2003/exports_imports/" + save_file + ".txt", mode = 'w')
+    w = open(game_dir + "/exports_imports/" + save_file + ".txt", mode = 'w')
     for i in standings:
         w.write(i.name + "\nFinishes ")
         for j in i.finishes:
